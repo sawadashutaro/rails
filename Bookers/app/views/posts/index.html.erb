@@ -32,19 +32,19 @@
 
 		<td>
 			
-			<%= link_to "Show", post_path(post.id),class:"show_#{post.id}" %>
+			<%= link_to "Show", post_path(post.id),class: "show_#{post.id}" %>
 
 		</td>
 
 		<td>
 			
-			<%= link_to "Edit", edit_post_path(post.id),class:"edit_#{post.id}" %>
+			<%= link_to "Edit", edit_post_path(post.id),class: "edit_#{post.id}" %>
 
 		</td>
 
 		<td>
 			
-			<%= link_to "Destroy", post_path(post.id), method: :"delete",class:"destroy_#{post.id}" %>
+			<%= link_to "Destroy", post_path(post.id), method: :"delete",class: "destroy_#{post.id}" %>
 
 		</td>
 
@@ -60,11 +60,11 @@
 
 	<p class="index-p">Title</p>
 
-	<%= f.text_field :titile,class:"book_title" %>
+	<%= f.text_field :titile,class: "book_title" %>
 
 	<p class="index-p">Body</p>
 
-	<%= f.text_area :body,class:"book_body" %>
+	<%= f.text_area :body,class: "book_body" %>
 
 	<div>
 
