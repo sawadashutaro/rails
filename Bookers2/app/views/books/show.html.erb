@@ -1,0 +1,30 @@
+<%= render "home/list" %>
+<%= notice %>
+<%= render "users/list", user: @book.user, post: @post %>
+
+<div class="col-lg-9">
+<h2>Book detail</h2>
+
+<table class="table table-striped" >
+	<tr>
+		<td><%= attachment_image_tag @book.user, :profile_image, :fill,40,40, fallback:"noimage.jpg", size:"40x40" %><div><%= link_to @book.user.name, user_path(@book.user.id) %></div></td>
+		<td><%= @book.title %></td>
+		<td><%= @book.body %></td>
+
+		<% if @book.user_id == current_user.id %>
+		<td><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-success btn-xs" %></td>
+		<td><%= link_to "Destroy", book_path(@book.id), method: :"delete", class:"sd btn btn-danger btn-xs" %></td>
+
+		<% else %>
+
+		<td></td>
+		<td></td>
+		<% end %>
+	</tr>
+</table>
+
+<p class="copy">CopyRight Infratop</p>
+
+</div>
+</div>
+</div>

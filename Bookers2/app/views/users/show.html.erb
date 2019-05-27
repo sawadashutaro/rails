@@ -1,0 +1,33 @@
+<%= render "home/list" %>
+<%= notice %>
+<%= render "users/list", user: @user, post: @post %>
+
+<div class="col-lg-9">
+<body>
+
+	<h2>Books</h2>
+
+	<table class="table table-striped">
+
+		<tr>
+			<th></th>
+			<th>Title</th>
+			<th>Opinion</th>
+		</tr>
+
+		<% @book.each do |post| %>
+		<tr>
+			<td><%= attachment_image_tag post.user, :profile_image, :fill,40,40, fallback:"noimage.jpg", size:"40x40" %></td>
+			<td><%= link_to post.title, book_path(post.id) %></td>
+			<td><%= post.body %></td>
+		</tr>
+		<% end %>
+
+	</table>
+
+	<p class="copy">CopyRight Infratop.inc</p>
+
+</body>
+</div>
+</div>
+</div>

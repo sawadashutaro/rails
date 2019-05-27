@@ -1,0 +1,37 @@
+<%= render "home/list" %>
+
+<div class="container">
+<body>
+	<div class="row">
+		<div class="col-lg-3">
+
+<h1>User info</h1>
+
+<%= form_for @user do |f| %>
+
+<% if @user.errors.any? %>
+	<%= @user.errors.count %>件のerrorsが発生しました
+	<% @user.errors.full_messages.each do |message| %>
+		<%= message %>
+	<% end %>
+<% end %>
+
+<h4>Name</h4>
+<%= f.text_field :name %>
+
+<h4>Image</h4>
+<%= f.attachment_field :profile_image %>
+
+<h4>Introdution</h4>
+<%= f.text_area :introduction %>
+
+<div><%= f.submit "Update User" %></div>
+
+<% end %>
+
+<p class="copy">CopyRight Infratop.inc</p>
+
+</div>
+</div>
+</body>
+</div>

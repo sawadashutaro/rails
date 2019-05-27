@@ -1,0 +1,35 @@
+<%= render "home/list" %>
+
+<div class="container">
+<body>
+	<div class="edit-body">
+
+<h1>Editing Book</h1>
+
+<%= form_for(@book) do |f| %>
+
+<% if @book.errors.any? %>
+	<%= @book.errors.count %>件のerrorsが発生しました
+	<% @book.errors.full_messages.each do |message| %>
+		<%= message %>
+	<% end %>
+<% end %>
+
+<h4>Title</h4>
+<div class="row"><%= f.text_field :title, class:"col-lg-12" %></div>
+
+<h4>Opinion</h4>
+<div class="row"><%= f.text_area :body, class:"col-lg-12" %></div>
+
+<div class="row eds"><%= f.submit "Update Book", class:"btn btn-primary col-lg-12" %></div>
+
+<%= link_to "Show", book_path(current_user.id), class:"edl" %>
+<span>|</span>
+<%= link_to "Back", books_path, class:"edl" %>
+<% end %>
+
+<p class="copy">CopyRight Infratop</p>
+
+</div>
+</body>
+</div>
